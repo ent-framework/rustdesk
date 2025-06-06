@@ -177,6 +177,9 @@ docker build -t "rustdesk-builder" . # 构建容器
 
 ```sh
 docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
+
+docker run --rm -it -v $PWD:/home/user/rustdesk -v ~/.cargo/git:/home/user/.cargo/git -v ~/.cargo/registry:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" -e CARGO_CFG_TARGET_OS=android -e CARGO_CFG_TARGET_ARCH=x86_64 rustdesk-builder --release --target x86_64-linux-android
+
 ```
 
 请注意:  
