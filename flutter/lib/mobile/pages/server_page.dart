@@ -52,8 +52,10 @@ class _DropDownAction extends StatelessWidget {
                 ));
           }
 
-          final approveMode = gFFI.serverModel.approveMode;
-          final verificationMethod = gFFI.serverModel.verificationMethod;
+          // final approveMode = gFFI.serverModel.approveMode;
+          final approveMode = 'password';
+          // final verificationMethod = gFFI.serverModel.verificationMethod;
+          final verificationMethod = kUsePermanentPassword;
           final showPasswordOption = approveMode != 'click';
           final isApproveModeFixed = isOptionFixed(kOptionApproveMode);
           return [
